@@ -1,0 +1,12 @@
+---
+
+- name: Hello World Msg
+  # connection: local
+  gather_facts: false
+  hosts: homelab
+  tasks:
+    - name: Print hello world using debug
+      debug:
+        msg: "Debug Hello World"
+    - name: Echo hello world from a shell
+      shell: echo "Hello World"
