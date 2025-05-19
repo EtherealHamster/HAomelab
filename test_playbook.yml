@@ -10,3 +10,14 @@
         msg: "Debug Hello World"
     - name: Echo hello world from a shell
       shell: echo "Hello World"
+    - name: Create a test file
+      copy:
+        dest: "~/testfile"
+        content: |
+          this is some hello world test
+    - name: Create a test file that requires permissions
+      become: true
+      copy:
+        dest: "/testfile"
+        content: |
+          this is a file tha requires root permissions \n
